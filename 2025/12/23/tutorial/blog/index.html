@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="目录 碎碎念 环境搭建步骤 配置、写作、美化、部署 踩坑记录 部署后文章无法加载 隐藏文件未部署问题 目录(TOC)渲染问题   总结 资源分享   1. 碎碎念   lz大二以前一直在用markdown+VSCode写笔记,直到有一次学生会的学姐向我展示了typst的神奇魔力,lz毅然投奔了typst,从此一发不可收拾.  到了大四终于有了一些空闲,想着把之前的笔记丢到网上去,于是lz萌生了搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一下搭建过程">
+<meta property="og:url" content="https://hastur-02.github.io/2025/12/23/tutorial/blog/index.html">
+<meta property="og:site_name" content="Hmmmm的笔记本">
+<meta property="og:description" content="目录 碎碎念 环境搭建步骤 配置、写作、美化、部署 踩坑记录 部署后文章无法加载 隐藏文件未部署问题 目录(TOC)渲染问题   总结 资源分享   1. 碎碎念   lz大二以前一直在用markdown+VSCode写笔记,直到有一次学生会的学姐向我展示了typst的神奇魔力,lz毅然投奔了typst,从此一发不可收拾.  到了大四终于有了一些空闲,想着把之前的笔记丢到网上去,于是lz萌生了搭建">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hastur-02.github.io/img/1.png">
+<meta property="article:published_time" content="2025-12-23T15:40:41.008Z">
+<meta property="article:modified_time" content="2025-12-23T18:18:48.502Z">
+<meta property="article:author" content="Hmmmm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hastur-02.github.io/img/1.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/zozlogo.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/zozlogo1.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/zozlogo2.png">
+        
+      
+    
+    <!-- title -->
+    <title>记录一下搭建过程</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<!-- hexo injector head_end start --><style>.typst-app {
+  margin: 0;
+  --typst-dom-scale: 1;
+  /* --typst-dom-scale: 1.5; */
+  margin: 5px;
+}
+
+.typst-dom-page {
+  width: calc(var(--data-page-width, 100%) * var(--typst-dom-scale));
+  height: calc(var(--data-page-height) * var(--typst-dom-scale));
+  --data-text-width: calc(1px * var(--typst-dom-scale));
+  --data-text-height: calc(1px * var(--typst-dom-scale));
+}
+
+.typst-back-canvas {
+  position: absolute;
+  z-index: -1;
+  width: calc(var(--data-page-width, 100%) * var(--typst-dom-scale));
+  height: calc(var(--data-page-height) * var(--typst-dom-scale));
+  pointer-events: none;
+}
+
+.typst-svg-page {
+  position: absolute;
+  z-index: 0;
+  width: calc(var(--data-page-width, 100%) * var(--typst-dom-scale));
+  height: calc(var(--data-page-height) * var(--typst-dom-scale));
+}
+
+.typst-html-semantics {
+  position: absolute;
+  z-index: 2;
+  width: calc(var(--data-page-width, 100%) * var(--typst-dom-scale));
+  height: calc(var(--data-page-height) * var(--typst-dom-scale));
+  color: transparent;
+  font-family: monospace;
+  white-space: pre;
+  opacity: 0.62;
+}
+
+.typst-html-semantics span {
+  color: transparent;
+  font-family: monospace;
+  transform-origin: left top;
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0;
+}
+
+.typst-content-hint {
+  position: absolute;
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.typst-html-semantics a {
+  position: absolute;
+  display: inline-block;
+}
+
+/* set transparent itself */
+.typst-content-group {
+  pointer-events: visible;
+}
+
+.typst-html-semantics span::-moz-selection {
+  color: transparent;
+  background: #7db9de;
+}
+
+.typst-html-semantics span::selection {
+  color: transparent;
+  background: #7db9de;
+}
+
+.typst-html-semantics *::-moz-selection {
+  color: transparent;
+  background: transparent;
+}
+
+.typst-html-semantics *::selection {
+  color: transparent;
+  background: transparent;
+}
+
+.typst-content-fallback {
+  color: transparent;
+  background: transparent;
+}
+
+.pseudo-link,
+.typst-text {
+  pointer-events: none;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: pre;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style>
+<script>/// https://segmentfault.com/a/1190000016574288
+(function () {
+  var ie = !!(window.attachEvent && !window.opera);
+  var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+  var fn = [];
+  var run = function () {
+    for (var i = 0; i < fn.length; i++) fn[i]();
+  };
+  var d = document;
+  d.ready = function (f) {
+    if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+    if (fn.push(f) > 1) return;
+    if (ie)
+      (function () {
+        try {
+          d.documentElement.doScroll('left');
+          run();
+        } catch (err) {
+          setTimeout(arguments.callee, 0);
+        }
+      })();
+    else if (wk)
+      var t = setInterval(function () {
+        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+      }, 0);
+  };
+})();
+</script>
+<script type="module" src="/typst/typst-main.js"></script><script src="/typst/svg-utils.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/Hastur-02?tab=projects">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/06/19/Compiler_Principles/LectureNotes/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hastur-02.github.io/2025/12/23/tutorial/blog/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&text=记录一下搭建过程"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&is_video=false&description=记录一下搭建过程"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=记录一下搭建过程&body=Check out this article: https://hastur-02.github.io/2025/12/23/tutorial/blog/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&name=记录一下搭建过程&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hastur-02.github.io/2025/12/23/tutorial/blog/&t=记录一下搭建过程"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#comparison"><span class="toc-number">2.</span> <span class="toc-text">1. 碎碎念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setup"><span class="toc-number">3.</span> <span class="toc-text">2. 环境搭建步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 基础环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%AE%89%E8%A3%85-Hexo"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 安装 Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%AE%89%E8%A3%85-Typst-%E6%B8%B2%E6%9F%93%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 安装 Typst 渲染器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#config"><span class="toc-number">4.</span> <span class="toc-text">3. 配置、写作、美化、部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 初始化项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE-SVG-%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F%E5%BF%85%E5%A4%87"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 字体配置 (SVG 渲染模式必备)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%86%99%E4%BD%9C%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 写作文件格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E8%AE%A9typst%E6%96%87%E4%BB%B6%E9%80%82%E9%85%8DHexo%E8%A7%84%E8%8C%83"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 让typst文件适配Hexo规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E7%BE%8E%E5%8C%96%E7%BD%91%E9%A1%B5"><span class="toc-number">4.5.</span> <span class="toc-text">3.5 美化网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E4%BB%A5%E5%8F%8A%E9%83%A8%E7%BD%B2"><span class="toc-number">4.6.</span> <span class="toc-text">3.6 本地预览以及部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#troubleshooting"><span class="toc-number">5.</span> <span class="toc-text">4. 踩坑记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#issue-404"><span class="toc-number">5.1.</span> <span class="toc-text">问题一：部署后文章无法加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#issue-deploy"><span class="toc-number">5.2.</span> <span class="toc-text">问题二：.nojekyll 文件未被上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#issue-toc"><span class="toc-number">5.3.</span> <span class="toc-text">问题三：侧边栏目录消失</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conclusion"><span class="toc-number">6.</span> <span class="toc-text">5. 总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#resources"><span class="toc-number">7.</span> <span class="toc-text">6. 资源分享</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        记录一下搭建过程
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Hmmmm</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-12-23T15:40:41.008Z" class="dt-published" itemprop="datePublished">2025-12-23</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="#comparison">碎碎念</a></li>
+<li><a href="#setup">环境搭建步骤</a></li>
+<li><a href="#config">配置、写作、美化、部署</a></li>
+<li><a href="#troubleshooting">踩坑记录</a><ul>
+<li><a href="#issue-404">部署后文章无法加载</a></li>
+<li><a href="#issue-deploy">隐藏文件未部署问题</a></li>
+<li><a href="#issue-toc">目录(TOC)渲染问题</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">总结</a></li>
+<li><a href="#resources">资源分享</a></li>
+</ol>
+<hr>
+<h2 id="comparison">1. 碎碎念</h2>
+
+<ul>
+<li><p>lz大二以前一直在用markdown+VSCode写笔记,直到有一次学生会的学姐向我展示了typst的神奇魔力,lz毅然投奔了typst,从此一发不可收拾.</p>
+</li>
+<li><p>到了大四终于有了一些空闲,想着把之前的笔记丢到网上去,于是lz萌生了搭建个人博客的念头,但是有两座大山摆在lz面前:</p>
+</li>
+</ul>
+<ol>
+<li>不知道怎么搭网站,lz的计网学的是依托</li>
+<li>之前的笔记都是typst格式的,而大部分的博客网站原生支持md,并不支持typst,导致lz只有两种选择:直接放PDF链接&#x2F;渲染typst</li>
+</ol>
+<p>lz上网搜索,发现了一个大佬<a target="_blank" rel="noopener" href="https://github.com/Myriad-Dreamin">Myriad-Dreamin</a>的<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-renderer-typst">hexo-renderer-typst</a>项目,总之经过一系列魔法,可以实现网页渲染typst,但是性能和可拓展性会收到极大的限制,因为其原理是将 typst 编译成 SVG 图片，再插入到 HTML 中,并不能直接转为 HTML 代码(这个typst官方也支持,但是效果很差,仍是实验版本)。</p>
+<ul>
+<li>无论如何,抱着玩玩的心理,在gemini的帮助下,lz花了一个下午+晚上搓出来一个<a href="https://hastur-02.github.io/">简陋的网站</a></li>
+<li>如果你对typst网站有兴趣,我的经历可以给你一些参考。此外,lz还分享了自己记笔记用的模板,放在最后了.</li>
+</ul>
+<hr>
+<h2 id="setup">2. 环境搭建步骤</h2>
+
+<h3 id="2-1-基础环境"><a href="#2-1-基础环境" class="headerlink" title="2.1 基础环境"></a>2.1 基础环境</h3><ul>
+<li>OS:macbook,IOS26</li>
+<li>node.js:24.7.0</li>
+<li>npm:10.9.2</li>
+<li>hexo-cli: 4.3.2</li>
+<li>git: 2.50.1 (Apple Git-155)</li>
+<li>typst: 13(现在14已经发布了)</li>
+</ul>
+<h3 id="2-2-安装-Hexo"><a href="#2-2-安装-Hexo" class="headerlink" title="2.2 安装 Hexo"></a>2.2 安装 Hexo</h3><ul>
+<li>请参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">官方文档</a></li>
+</ul>
+<h3 id="2-3-安装-Typst-渲染器"><a href="#2-3-安装-Typst-渲染器" class="headerlink" title="2.3 安装 Typst 渲染器"></a>2.3 安装 Typst 渲染器</h3><ul>
+<li>参考<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-renderer-typst">项目文件</a>:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install @myriaddreamin/typst.ts @myriaddreamin/typst-ts-renderer @myriaddreamin/typst-ts-node-compiler</span><br><span class="line">npm install hexo-renderer-typst</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果安装时出现了依赖错误,试着强行安装:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-typst@0.7.0-rc1 @myriaddreamin/typst-ts-renderer@0.7.0-rc1 @myriaddreamin/typst.ts@0.7.0-rc1 @myriaddreamin/typst-ts-node-compiler@0.7.0-rc1 --legacy-peer-deps</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="config">3. 配置、写作、美化、部署</h2>
+
+<h3 id="3-1-初始化项目"><a href="#3-1-初始化项目" class="headerlink" title="3.1 初始化项目"></a>3.1 初始化项目</h3><ul>
+<li>请参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">官方文档</a></li>
+<li>初始化完成后,文件夹结构应该长这样:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<ul>
+<li>之后我们只会在source文件夹、themes文件夹和_config.yml文件上做文章</li>
+</ul>
+<h3 id="3-2-字体配置-SVG-渲染模式必备"><a href="#3-2-字体配置-SVG-渲染模式必备" class="headerlink" title="3.2 字体配置 (SVG 渲染模式必备)"></a>3.2 字体配置 (SVG 渲染模式必备)</h3><p>Typst 渲染成 SVG 需要字体文件支持。</p>
+<ol>
+<li>在根目录下新建 <code>fonts</code> 文件夹。</li>
+<li>lz在里面放入自己用的 <code>Consolas.ttf</code>, <code>SimHei.ttf</code> 字体。</li>
+</ol>
+<h3 id="3-3-写作文件格式"><a href="#3-3-写作文件格式" class="headerlink" title="3.3 写作文件格式"></a>3.3 写作文件格式</h3><ul>
+<li><p>新建文章时，lz将文件后缀改为 <code>.typ</code> (推荐) 或 <code>.html.typ</code>(用于实验性导出html,不支持导入库,基本没用)。放在 <code>source/_posts</code> 文件夹下。</p>
+</li>
+<li><p>lz喜欢把每一个文章单独放在一个文件夹中,就像:<br><img src="/./img/1.png"></p>
+</li>
+</ul>
+<h3 id="3-4-让typst文件适配Hexo规范"><a href="#3-4-让typst文件适配Hexo规范" class="headerlink" title="3.4 让typst文件适配Hexo规范"></a>3.4 让typst文件适配Hexo规范</h3><ol>
+<li><p>Hexo 需要 YAML 头部来识别标题&#x2F;分类，必须严格放在文件第一行,比如:</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &quot;我的第一篇 Typst 博客&quot;</span><br><span class="line">date: 2025-12-23</span><br><span class="line">categories: [学习笔记]</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">= 正文开始</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然而,typst实际会把前面的内容全部渲染,导致文章出来丑的要死,lz折腾后遂放弃,只实现了设置文章标题,其方法为:不使用开头那一大段,而是在文件开头插入<code>#set document(title: &quot;文章标题&quot;)</code>,这样插件就能识别到标题了</li>
+</ul>
+</li>
+<li><p>typst默认分页,页面大小为A4,这是方便转为PDF格式,lz使用</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#set page(</span><br><span class="line">    margin:(0pt),</span><br><span class="line">    width:700pt,</span><br><span class="line">    height:auto</span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+<p>来使其适配网页浏览</p>
+<ol start="3">
+<li>字体大小以及其他微调,可以放在后面本地部署时进行</li>
+</ol>
+<h3 id="3-5-美化网页"><a href="#3-5-美化网页" class="headerlink" title="3.5 美化网页"></a>3.5 美化网页</h3><ul>
+<li>lz用的是来自<a target="_blank" rel="noopener" href="https://github.com/probberechts/hexo-theme-cactus">https://github.com/probberechts/hexo-theme-cactus</a> 的主题,具体配置请看仓库</li>
+</ul>
+<h3 id="3-6-本地预览以及部署"><a href="#3-6-本地预览以及部署" class="headerlink" title="3.6 本地预览以及部署"></a>3.6 本地预览以及部署</h3><ul>
+<li>使用<code>hexo generate</code>生成静态文件,<code>hexo server</code>启动本地服务器预览</li>
+<li>(使用github pages)进行部署:<ul>
+<li>参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/one-command-deployment">官方文档</a>,遇到问题可以google</li>
+<li>lz自己的修改:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/Hastur-02/Hastur-02.github.io.git</span><br><span class="line">  branch: main</span><br><span class="line">  url: https://Hastur-02.github.io</span><br><span class="line">  ignore_hidden: false </span><br></pre></td></tr></table></figure></li>
+<li>小细节:config文件的url字段最好也设置一下,不知道为什么</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="troubleshooting">4. 踩坑记录</h2>
+
+<h3 id="issue-404">问题一：部署后文章无法加载</h3>
+
+<p>现象：本地 hexo server 正常，部署到 GitHub Pages 后，Typst 文章空白.</p>
+<p>原因：Typst 插件将编译数据放在了 .deploy_git&#x2F;artifacts&#x2F;typst&#x2F;source&#x2F;_posts 下。GitHub Pages 默认使用 Jekyll，它会忽略所有以 _ 开头的文件夹（如 _posts），导致资源无法访问。</p>
+<p>解决方案：在原来的根目录下的 source 目录下创建一个名为 .nojekyll 的空文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="built_in">source</span></span><br><span class="line"><span class="built_in">touch</span> .nojekyll</span><br></pre></td></tr></table></figure>
+
+<p>并在 <code>_config.yml</code> 中配置 Hexo 包含此文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include:</span><br><span class="line">  - &quot;.nojekyll&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="issue-deploy">问题二：.nojekyll 文件未被上传</h3>
+
+<p>现象：public 目录里有 .nojekyll，但在 GitHub 仓库里找不到，问题依旧。</p>
+<p>原因：hexo-deployer-git 插件为了安全，默认会忽略所有隐藏文件（以 . 开头的文件）。</p>
+<p>解决方案：修改 _config.yml 的部署配置，添加 ignore_hidden: false：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;你的仓库地址&gt;</span><br><span class="line">  branch: main</span><br><span class="line">  url: &lt;你的网站地址&gt;</span><br><span class="line">  ignore_hidden: false  # &lt;--- 关键！</span><br></pre></td></tr></table></figure>
+
+<h3 id="issue-toc">问题三：侧边栏目录消失</h3>
+
+<p>现象：Markdown 文章有侧边栏目录，Typst 文章没有。</p>
+<p>原因：Typst 渲染为 SVG 图片，Hexo 主题抓取不到 HTML 标题标签。</p>
+<p>解决方案：</p>
+<p>放弃侧边栏目录，改用 Typst 原生目录。在文章开头添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#outline(title: &quot;文章目录&quot;, indent: true)</span><br></pre></td></tr></table></figure>
+
+<p>如果不喜欢自带的下划线和页码,更加贴合网页浏览逻辑，可以使用 <code>show</code> 规则美化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 自定义目录条目的样式</span><br><span class="line">#show outline.entry: it =&gt; link(</span><br><span class="line">  it.element.location(),</span><br><span class="line">  it.indented(it.prefix(), it.body())</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">#outline(</span><br><span class="line">  title: &quot;目录&quot;, </span><br><span class="line">  indent: 2em, depth: 2</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="conclusion">5. 总结</h2>
+
+<p>这仍然只是一个偏记录的帖子,lz实现的网站实在过于简陋,大部分的问题交给了gemini解决,这个网站lz之后估计也不会去看,不过展示的编译原理笔记(不保证没有错误)倒真是lz呕心沥血写出来的<br><strong>最后,typst只是图一乐,真写博客还得是markdown!</strong></p>
+<h2 id="resources">6. 资源分享</h2>
+
+<ul>
+<li>lz使用的笔记模板: </li>
+<li>使用方法<ul>
+<li>下载模板到本地,在同一目录下新建文件,导入后即可使用,如:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 引入模板中的所有内容</span><br><span class="line">#import &quot;lib.typ&quot;: *</span><br><span class="line"></span><br><span class="line">// 应用模板</span><br><span class="line">#show: lecture-note.with(</span><br><span class="line">title: &quot;编译原理笔记&quot;,</span><br><span class="line">author: &quot;Hmmmm&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// --- 下面开始写正文 ---</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/Hastur-02?tab=projects">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#comparison"><span class="toc-number">2.</span> <span class="toc-text">1. 碎碎念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setup"><span class="toc-number">3.</span> <span class="toc-text">2. 环境搭建步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 基础环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%AE%89%E8%A3%85-Hexo"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 安装 Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%AE%89%E8%A3%85-Typst-%E6%B8%B2%E6%9F%93%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 安装 Typst 渲染器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#config"><span class="toc-number">4.</span> <span class="toc-text">3. 配置、写作、美化、部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 初始化项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE-SVG-%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F%E5%BF%85%E5%A4%87"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 字体配置 (SVG 渲染模式必备)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%86%99%E4%BD%9C%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 写作文件格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E8%AE%A9typst%E6%96%87%E4%BB%B6%E9%80%82%E9%85%8DHexo%E8%A7%84%E8%8C%83"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 让typst文件适配Hexo规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E7%BE%8E%E5%8C%96%E7%BD%91%E9%A1%B5"><span class="toc-number">4.5.</span> <span class="toc-text">3.5 美化网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E4%BB%A5%E5%8F%8A%E9%83%A8%E7%BD%B2"><span class="toc-number">4.6.</span> <span class="toc-text">3.6 本地预览以及部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#troubleshooting"><span class="toc-number">5.</span> <span class="toc-text">4. 踩坑记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#issue-404"><span class="toc-number">5.1.</span> <span class="toc-text">问题一：部署后文章无法加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#issue-deploy"><span class="toc-number">5.2.</span> <span class="toc-text">问题二：.nojekyll 文件未被上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#issue-toc"><span class="toc-number">5.3.</span> <span class="toc-text">问题三：侧边栏目录消失</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conclusion"><span class="toc-number">6.</span> <span class="toc-text">5. 总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#resources"><span class="toc-number">7.</span> <span class="toc-text">6. 资源分享</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hastur-02.github.io/2025/12/23/tutorial/blog/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&text=记录一下搭建过程"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&is_video=false&description=记录一下搭建过程"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=记录一下搭建过程&body=Check out this article: https://hastur-02.github.io/2025/12/23/tutorial/blog/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&title=记录一下搭建过程"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hastur-02.github.io/2025/12/23/tutorial/blog/&name=记录一下搭建过程&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hastur-02.github.io/2025/12/23/tutorial/blog/&t=记录一下搭建过程"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025
+    Hmmmm
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/Hastur-02?tab=projects">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
